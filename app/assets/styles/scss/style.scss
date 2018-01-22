@@ -1,14 +1,27 @@
-/*!
- *  Custom SCSS/CSS Starts here
- * ==========================================
- */
 
+/* Font Style(s)
+ * ========================================== */
+ @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+
+
+/* Custom Styles (SASS)
+ * ========================================== */
 $mainBlue: #2f5572;
-
 body {
   color: $mainBlue;
-
-  padding: 35px;
-  margin: 10px;
   columns: 300px 2;
+  
+  h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+  }
+
+
+}
+
+.box {
+  a {
+    display: block;
+  padding: 10px;
+  }
 }

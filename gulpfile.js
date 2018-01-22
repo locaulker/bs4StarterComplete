@@ -19,9 +19,9 @@ gulp.task('html', function(){
 // Compile and merge CSS files
 gulp.task('styles', function(){
 
-  const stream1 = gulp.src('node_modules/font-awesome/css/font-awesome.css');
-  const stream2 = gulp.src('node_modules/bootstrap/dist/css/bootstrap.css');
-  const stream3 = gulp.src('./app/assets/styles/**/*.scss')
+  var m1_faCSS = gulp.src('node_modules/font-awesome/css/font-awesome.css');
+  var m2_bsCSS = gulp.src('node_modules/bootstrap/dist/css/bootstrap.css');
+  var m3_customCSS = gulp.src('./app/assets/styles/**/*.scss')
     .pipe(sass({
         outputStyle: 'expanded'
       }).on('error', sass.logError))
@@ -30,7 +30,7 @@ gulp.task('styles', function(){
       cascade: false
       }))
 
-    return merge(stream1, stream2, stream3)
+    return merge(m1_faCSS, m2_bsCSS, m3_customCSS)
       .pipe(sourcemaps.init())
       .pipe(concat('bundle.css'))
       .pipe(sourcemaps.write('./maps'))
@@ -42,7 +42,7 @@ gulp.task('styles', function(){
 // Move Font-Awesome fonts to app/assets folder
 gulp.task('fa-fonts', function(){
   return gulp.src('node_modules/font-awesome/fonts/*')
-    .pipe(gulp.dest('./app/assets/fonts'));
+    .pipe(gulp.dest('./app/temp/fonts'));
 });
 
 
@@ -58,3 +58,5 @@ gulp.task('watch', function(){
   });
 
 });
+
+gulp.task('default', ['styles', 'fa-fonts']);

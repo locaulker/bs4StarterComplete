@@ -13,7 +13,7 @@
 node_modules/
 .tmp/
 ./maps
-app/temp/css/maps/bundle.css.map
+bundle.css.map
 
 # OS or Editor folders
 .DS_Store
