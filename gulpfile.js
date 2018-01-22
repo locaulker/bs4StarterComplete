@@ -4,7 +4,8 @@ watch = require('gulp-watch'),
 sourcemaps = require('gulp-sourcemaps'),
 autoprefixer = require('gulp-autoprefixer'),
 merge = require('merge-stream'),
-concat = require('gulp-concat');
+concat = require('gulp-concat'),
+browserSync = require('browser-sync').create();
 
 
 
@@ -48,15 +49,28 @@ gulp.task('fa-fonts', function(){
 
 
 gulp.task('watch', function(){
+
+  browserSync.init({
+    notify: false,
+    server: {
+      baseDir: "app"
+    }
+  });
   
   watch('./app/index.html', function(){
-    gulp.start('html');
+    browserSync.reload();
   });
 
   watch('./app/assets/styles/**/*.scss', function(){
-    gulp.start('styles');
+    gulp.start('cssInject');
   });
 
 });
 
-gulp.task('default', ['styles', 'fa-fonts']);
+
+gulp.task('cssInject',['styles'], function(){
+  return gulp.src('./app/temp/css/bundle.css')
+    .pipe(browserSync.stream());
+});
+
+// gulp.task('default', ['styles', 'fa-fonts']);
