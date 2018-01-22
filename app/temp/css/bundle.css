@@ -2336,6 +2336,21 @@
   clip: auto;
 }
 
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600");
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.large-hero {
+  position: relative;
+}
+
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -11311,19 +11326,4 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600");
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.large-hero {
-  position: relative;
-}
-
 /*# sourceMappingURL=maps/bundle.css.map */

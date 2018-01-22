@@ -14,17 +14,20 @@ gulp.task('styles', function(){
   var m3_customSCSS = gulp.src('./app/assets/styles/**/*.scss')
     .pipe(sass({
         outputStyle: 'expanded'
-      }).on('error', sass.logError))
+    }).on('error', function(errorInfo){
+      console.log(errorInfo.toString());
+      this.emit('end');
+    }))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
-      }))
+    }))
 
     return merge(m1_faCSS, m2_bsCSS, m3_customSCSS)
-      .pipe(sourcemaps.init())
-      .pipe(concat('bundle.css'))
-      .pipe(sourcemaps.write('./maps'))
-      .pipe(gulp.dest('./app/temp/css'));
+    .pipe(sourcemaps.init())
+    .pipe(concat('bundle.css'))
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest('./app/temp/css'));
 });
 
 
