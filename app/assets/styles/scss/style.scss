@@ -1,0 +1,14 @@
+/*!
+ *  Custom SCSS/CSS Starts here
+ * ==========================================
+ */
+
+$mainBlue: #2f5572;
+
+body {
+  color: $mainBlue;
+
+  padding: 35px;
+  margin: 10px;
+  columns: 300px 2;
+}
