@@ -23,6 +23,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.3",
     "gulp-watch": "4.3.11",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "webpack": "3.8.1"
   }
 }

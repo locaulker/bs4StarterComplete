@@ -68,8 +68,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(1);
-
 var Person = __webpack_require__(2);
+
+// alert("This is a test for our webpack automation!");
+// alert("Testing 123");
+alert("ABC 321");
 
 var john = new Person("John Doe", "blue");
 john.greet();
@@ -78,7 +81,7 @@ var jane = new Person("Jane Smith", "green");
 jane.greet();
 
 
-$("h1").remove();
+$("h1").css('color','green');
 
 /***/ }),
 /* 1 */
